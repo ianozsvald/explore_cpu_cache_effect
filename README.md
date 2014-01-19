@@ -25,3 +25,37 @@ If you make two recordings under different situations you can compare them. In t
 
 ![alt tag](e6420_nocompetition_vs_competition_line.png)
 
+Other notes
+-----------
+
+* http://stackoverflow.com/questions/14674463/why-doesnt-perf-report-cache-misses
+
+    $ perf stat -B -e cache-references,cache-misses,cycles,instructions,branches,faults,migrations python measure_cache_effect.py --time dummy.pickle
+
+perf stat can measure cache misses, running the non-competitive version yields:
+
+ Performance counter stats for 'python measure_cache_effect.py --time dummy.pickle':
+
+     9,350,375,599 cache-references                                            
+     2,047,742,205 cache-misses              #   21.900 % of all cache refs    
+   556,478,747,432 cycles                    #    0.000 GHz                    
+ 1,707,414,165,292 instructions              #    3.07  insns per cycle        
+   190,501,416,729 branches                                                    
+           254,142 faults                                                      
+                13 migrations                                                  
+     253.529216753 seconds time elapsed
+
+For two at the same time (competitive):
+
+
+ Performance counter stats for 'python measure_cache_effect.py --time dummy.pickle':
+
+    12,201,926,851 cache-references                                            
+     3,596,505,964 cache-misses              #   29.475 % of all cache refs    
+   729,108,789,427 cycles                    #    0.000 GHz                    
+ 1,707,483,701,009 instructions              #    2.34  insns per cycle        
+   190,514,623,535 branches                                                    
+           254,141 faults                                                      
+                10 migrations                                                  
+     332.255561372 seconds time elapsed
+

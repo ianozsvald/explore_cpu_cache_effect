@@ -56,7 +56,8 @@ def get_cpu_info():
 # good for L3 cache
 # http://en.wikipedia.org/wiki/List_of_Intel_Core_i7_microprocessors#.22Sandy_Bridge_.28quad-core.29.22_.2832_nm.29
 # Core i7-2720QM, 4*256KB L2, 6MB L3
-max_length = 1.8e6
+#max_length = 1.8e6
+max_length = 268000
 increment_by = 50000
 nbr_repeated_operations = 100
 box_width = 200000
