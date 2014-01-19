@@ -15,11 +15,11 @@ To graph the output use:
 
 It'll generate a plot like the following for an unladen machine:
 
-![alt tag](https://raw.github.com/ianozsvald/explore_cpu_cache_effect/e6420_nocompetition.png)
+![alt tag](explore_cpu_cache_effect/e6420_nocompetition.png)
 
 If you make two recordings under different situations you can compare them. In this case I'm comparing an unladen machine (nothing but this code running) with one of the recordings made when I ran this process twice simultaneoushly (which would make the L3 cache far more heavily used).
 
     $ python measure_cache_effect.py --graph <filename1> <filname2> --graphline
 
-![alt tag](https://github.com/ianozsvald/explore_cpu_cache_effect/blob/master/e6420_nocompetition_vs_competition_line.png)
+![alt tag](e6420_nocompetition_vs_competition_line.png)
 
