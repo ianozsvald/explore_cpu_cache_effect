@@ -56,11 +56,17 @@ def get_cpu_info():
 # good for L3 cache
 # http://en.wikipedia.org/wiki/List_of_Intel_Core_i7_microprocessors#.22Sandy_Bridge_.28quad-core.29.22_.2832_nm.29
 # Core i7-2720QM, 4*256KB L2, 6MB L3
-#max_length = 1.8e6
-max_length = 268000
+max_length = 1.8e6
+max_length = 268000  # very short plot
 increment_by = 50000
 nbr_repeated_operations = 100
 box_width = 200000
+
+# Core 2 Duo P7350 3MB cache
+# Macbook Core 2 Duo with L2 3MB cache
+#max_length = 600000
+#increment_by = 20000
+#box_width = 100000
 
 # labels for this laptop
 cpu_model, cpu_cache_bytes, cpu_cache_size, cpu_cache_alignment = get_cpu_info()
@@ -71,9 +77,6 @@ print cpu_model, cpu_cache_bytes, cpu_cache_alignment
 laptop_label = cpu_model
 cache_location = cpu_cache_bytes  # 6e6  # position of cache_label on the graph
 cache_label = cpu_cache_size
-
-# Core 2 Duo P7350 3MB cache
-# ????
 
 trials = 30
 

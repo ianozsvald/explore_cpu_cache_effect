@@ -59,3 +59,8 @@ For two at the same time (competitive):
                 10 migrations                                                  
      332.255561372 seconds time elapsed
 
+
+TODO
+----
+
+* store CPU details in the pickled array so the name of a second machine is remembered
